@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
-import 'package:timely_app/core/constant/di/dependency.dart';
+import 'package:timely_app/core/di/dependency.dart';
 import 'package:timely_app/core/widget/error_app_widget.dart';
 
 void main() async {
