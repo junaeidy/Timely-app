@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:timely_app/core/constant/di/dependency.dart';
-import 'package:timely_app/core/widget/loading_app_widget.dart';
+import 'package:timely_app/core/widget/error_app_widget.dart';
 
 void main() async {
   await initializeDateFormatting('id', null);
@@ -17,7 +17,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: LoadingAppWidget(),
+        body: ErrorAppWidget(
+          description: "Error request API",
+          onPressDefaultButton: () {
+            print("refresh button on click");
+          },
+          alternatifButton: FilledButton(
+            child: Text("Print"),
+            onPressed: () {
+              print("Print Sekarang");
+            },
+          ),
+        ),
       ),
     );
   }
