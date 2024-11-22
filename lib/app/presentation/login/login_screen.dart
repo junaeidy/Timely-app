@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:timely_app/core/widget/app_widget.dart';
 import 'package:timely_app/app/presentation/login/login_notifier.dart';
 import 'package:timely_app/core/helper/global_helper.dart';
+import 'package:timely_app/app/presentation/home/home_screen.dart';
 
 class LoginScreen extends AppWidget<LoginNotifier, void, void> {
   @override
@@ -49,12 +50,19 @@ class LoginScreen extends AppWidget<LoginNotifier, void, void> {
             Container(
                 width: double.maxFinite,
                 child: FilledButton(
-                    onPressed: _onPressLogin, child: Text("Login")))
+                    onPressed: () => _onPressLogin(context),
+                    child: Text("Login")))
           ],
         ),
       ),
     );
   }
 
-  _onPressLogin() {}
+  _onPressLogin(BuildContext context) {
+    Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (context) => HomeScreen(),
+        ));
+  }
 }
