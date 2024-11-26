@@ -17,7 +17,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.red),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        scaffoldBackgroundColor: Colors.white,
+        textTheme: TextTheme(
+          bodyLarge: TextStyle(color: Colors.black),
+        ),
+      ),
       home: Scaffold(
         body: LoginScreen(),
       ),

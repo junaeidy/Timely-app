@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:timely_app/core/widget/app_widget.dart';
@@ -30,19 +32,40 @@ class LoginScreen extends AppWidget<LoginNotifier, void, void> {
               height: 20,
             ),
             TextField(
+              style: TextStyle(color: Colors.black),
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.email),
-                  label: Text("Email"),
-                  border: OutlineInputBorder()),
+                  prefixIcon: Icon(Icons.email, color: Colors.grey),
+                  label: Text(
+                    "Email",
+                    style: TextStyle(
+                        color: const Color.fromARGB(255, 160, 160, 160)),
+                  ),
+                  fillColor: Colors.grey[50],
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                  )),
             ),
             SizedBox(
               height: 10,
             ),
             TextField(
               decoration: InputDecoration(
-                  prefixIcon: Icon(Icons.password),
-                  label: Text("Password"),
-                  border: OutlineInputBorder()),
+                  prefixIcon: Icon(Icons.password, color: Colors.grey),
+                  label: Text("Password",
+                      style: TextStyle(
+                          color: const Color.fromARGB(255, 160, 160, 160))),
+                  fillColor: Colors.grey[50],
+                  filled: true,
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.grey),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.blue, width: 2.0),
+                  )),
             ),
             SizedBox(
               height: 10,
@@ -50,6 +73,10 @@ class LoginScreen extends AppWidget<LoginNotifier, void, void> {
             Container(
                 width: double.maxFinite,
                 child: FilledButton(
+                    style: const ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll<Color>(
+                          Color.fromRGBO(49, 157, 247, 1)),
+                    ),
                     onPressed: () => _onPressLogin(context),
                     child: Text("Login")))
           ],
